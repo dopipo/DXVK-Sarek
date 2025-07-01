@@ -144,6 +144,7 @@ namespace dxvk {
     /* Hitman 2 - requires AGS library      */
     { R"(\\HITMAN2\.exe$)", {{
       { "dxgi.customVendorId",              "10de" },
+      { "d3d11.cachedDynamicResources",     "c"    },
     }} },
     /* Modern Warfare Remastered                  */
     { R"(\\h1(_[ms]p64_ship|-mod)\.exe$)", {{
@@ -461,6 +462,12 @@ namespace dxvk {
      * Invisible terrain on Intel                  */
     { R"(\\FarCry(5|NewDawn)\.exe$)", {{
       { "d3d11.zeroInitWorkgroupMemory",    "True" },
+    }} },
+    /* Romancing Saga 3                            *
+     * Render issues on D3D11                      *
+     * Lets try with just constantBufferRangeCheck */
+    { R"(\\rs3.exe\.exe$)", {{
+      { "d3d11.constantBufferRangeCheck",    "True" },
     }} },
 
     /**********************************************/
@@ -1045,6 +1052,32 @@ namespace dxvk {
      * Enables soft real-time shadows             */
     { R"(\\CivCity Rome\.exe$)", {{
       { "d3d9.customVendorId",              "10de" },
+    }} },
+    /* Lego Indiana Jones: The Original Adventures *
+     * Fix UI performance                          */
+    { R"(\\LEGOIndy\.exe$)", {{
+      { "d3d9.cachedDynamicBuffers",        "True" },
+    }} },
+    /* Lego Batman: The Videogame                 *
+     * Fix UI performance                         */
+    { R"((\\LEGOBatman|LegoBatman\\Game)\.exe$)", {{
+      { "d3d9.cachedDynamicBuffers",        "True" },
+    }} },
+    /* Thumper - Fixes missing track              */
+    { R"(\\THUMPER_dx9\.exe$)", {{
+      { "d3d9.floatEmulation",              "Strict" },
+    }} },
+    /* Pirate Huner - Prevents crash              */
+    { R"(\\PH\.exe$)", {{
+      { "d3d9.memoryTrackTest",             "True" },
+      { "d3d9.maxAvailableMemory",          "2048" },
+    }} },
+    /* Battle Engine Aquila - Enables additional  *
+     * graphical features and Nvidia particle fog */
+    { R"(\\BEA\.exe$)", {{
+      { "d3d9.customVendorId",              "10de" },
+      { "d3d9.customDeviceId",              "0330" },
+      { "d3d9.customDeviceDesc",            "NVIDIA GeForce FX 5900 Ultra" },
     }} },
 
     /**********************************************/
