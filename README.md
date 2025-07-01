@@ -2,7 +2,7 @@
 
 ### Why Does This Repo Exist?
 
-This repository was created to support users with vulkan capable GPUs that do not meet the 1.3 requirement of the current builds. My goal is to ensure that everyone can benefit from the nice performance of DXVK, even if their hardware is slightly older.
+This repository was created to support users with Vulkan capable GPUs that do not meet the 1.3 requirement of the current builds. My goal is to ensure that everyone can benefit from the nice performance of DXVK, even if their hardware is slightly older.
 
 Additionally, this project is intended to be integrated into [Proton Sarek](https://github.com/pythonlover02/Proton-Sarek). The main idea is to backport Quality of Life (QOL) patches and per game configurations from the latest versions to the 1.10.x branch.
 
